@@ -66,6 +66,10 @@ go get github.com/hollis-labs/plugin-sdk
   exports the registry names, and isolates load failures per plugin. The
   core entry point has no dependencies; `@hollis-labs/plugin-registry/react`
   adds the React adapter behind an optional peer.
+- `ts/packages/plugin-host-ui` — a separate host presentation package,
+  currently exporting `@hollis-labs/plugin-host-ui/vite`: explicit shared
+  runtime entries, dev/build importmaps, stylesheet leases and a host-owned
+  version admission interface. See [its API and example](ts/packages/plugin-host-ui/README.md).
 
 ## Quickstart
 

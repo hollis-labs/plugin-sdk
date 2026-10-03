@@ -68,7 +68,7 @@ jobs:
           cache: npm
           cache-dependency-path: ts/package-lock.json
 
-      # `npm ci` runs plugin-registry's `prepare`, which builds dist/. That is
+      # `npm ci` runs each package's `prepare`, which builds dist/. That is
       # the same path a consumer's install takes, so a break in it is a break
       # for them.
       - name: install
@@ -89,4 +89,4 @@ jobs:
       # The published file list is a property of the package, checked before a
       # human runs `npm publish`, not after.
       - name: pack (dry run)
-        run: npm pack --dry-run -w @hollis-labs/plugin-registry
+        run: npm pack --dry-run --workspaces
