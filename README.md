@@ -1,10 +1,25 @@
 # plugin-sdk
 
-> **Deprecated standalone Go module.** New development and protocol-2 releases
-> live in [libs/plugin-mcp](https://github.com/hollis-labs/libs/tree/main/plugin-mcp).
-> Install `github.com/hollis-labs/libs/plugin-mcp@v0.1.0` and use its
-> `plugin-sdk` packages. Existing standalone tags and history remain available;
-> there will be no separate protocol-2 Go release from this repository.
+## Maintenance moved to `github.com/hollis-labs/libs/plugin-mcp`
+
+This standalone repository is retired. Maintained source and documentation are
+in [github.com/hollis-labs/libs/plugin-mcp/plugin-sdk](https://github.com/hollis-labs/libs/tree/plugin-mcp%2Fv0.1.1/plugin-mcp/plugin-sdk), released in **`plugin-mcp/v0.1.1`**.
+Install the replacement module:
+
+```sh
+go get github.com/hollis-labs/libs/plugin-mcp@v0.1.1
+```
+
+Replace the `github.com/hollis-labs/plugin-sdk` import prefix with
+`github.com/hollis-labs/libs/plugin-mcp/plugin-sdk`, retaining the package subpath. Review the replacement documentation
+for any API changes before migrating. Existing standalone tags and history remain
+available; old module pins do not automatically redirect to the new module.
+
+The TypeScript companion source is now under
+[`plugin-mcp/plugin-sdk/ts`](https://github.com/hollis-labs/libs/tree/plugin-mcp%2Fv0.1.1/plugin-mcp/plugin-sdk/ts).
+This retirement does not publish or change an npm package version.
+
+The documentation below describes historical standalone usage.
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/hollis-labs/plugin-sdk.svg)](https://pkg.go.dev/github.com/hollis-labs/plugin-sdk)
 
