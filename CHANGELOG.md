@@ -1,5 +1,15 @@
 # Changelog
 
+## Repository retirement — 2026-10-09
+
+### Changed
+
+- Maintained development moved to [github.com/hollis-labs/libs/plugin-mcp/plugin-sdk](https://github.com/hollis-labs/libs/tree/plugin-mcp%2Fv0.1.1/plugin-mcp/plugin-sdk) in
+  `github.com/hollis-labs/libs/plugin-mcp@v0.1.1` (`plugin-mcp/v0.1.1`).
+- This standalone repository is retired after the replacement release was
+  verified fetchable with successful module CI. README migration instructions
+  identify the new import prefix; existing standalone tags and history are preserved.
+
 ## v0.6.1 — 2026-10-02
 
 - HTTP requests now carry optional `RawPath` and `RawQuery` fields so hosts can
