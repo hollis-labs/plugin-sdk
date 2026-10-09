@@ -1,5 +1,11 @@
 # plugin-sdk
 
+> **Deprecated standalone Go module.** New development and protocol-2 releases
+> live in [libs/plugin-mcp](https://github.com/hollis-labs/libs/tree/main/plugin-mcp).
+> Install `github.com/hollis-labs/libs/plugin-mcp@v0.1.0` and use its
+> `plugin-sdk` packages. Existing standalone tags and history remain available;
+> there will be no separate protocol-2 Go release from this repository.
+
 [![Go Reference](https://pkg.go.dev/badge/github.com/hollis-labs/plugin-sdk.svg)](https://pkg.go.dev/github.com/hollis-labs/plugin-sdk)
 
 The plugin contract, in two halves. A universal **Go SDK** for building
@@ -16,17 +22,33 @@ same thing.
 
 ## Status
 
-Pre-1.0 (`v0.x`). The wire protocol (`subprocess.ProtocolVersion = 2`)
-and exported interfaces are stable in practice but the API may still
-shift between minor versions; treat any minor bump as potentially
-breaking and read the CHANGELOG before upgrading. Patch bumps
-(`v0.x.y`) are documentation, examples, and internal hardening only.
+This repository retains the standalone SDK history, including protocol-2 work
+that was consolidated into `libs/plugin-mcp`. The standalone `v0.6.1` tag does
+not release that protocol-2 work. Use the consolidated module for protocol 2;
+read its CHANGELOG before upgrading. The examples below describe the historical
+standalone import paths and must be updated when migrating.
+
+This Go-module deprecation does not change npm package names or publish a new
+TypeScript package version.
 
 ## Install
 
 ```bash
-go get github.com/hollis-labs/plugin-sdk
+go get github.com/hollis-labs/libs/plugin-mcp@v0.1.0
 ```
+
+Replace Go imports by adding the consolidated module prefix:
+
+```go
+import "github.com/hollis-labs/libs/plugin-mcp/plugin-sdk"
+import "github.com/hollis-labs/libs/plugin-mcp/plugin-sdk/subprocess"
+```
+
+Apply the same prefix to SDK subpackages such as `capability`, `manifest`, and
+`registry`. Hosts migrate to `github.com/hollis-labs/libs/plugin-mcp/plugin-host`
+at the same time so both sides use the consolidated SDK types. Changing imports
+does not supply the required protocol-2 incarnation, grants, or host policy;
+follow the consolidated module's handshake and migration guidance.
 
 ## What's in the box
 
